@@ -7,16 +7,9 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!item) return;
 
     let action = item.dataset.action;
+    let component = item.dataset.component;
 
-    switch (action) {
-      case 'close':
-        await import('./components/menu').then(({ handleMenuClick }) => {
-          handleMenuClick(action);
-        });
-        break;
-
-      default:
-        break;
-    }
+    const { toggleMenuState } = await import(`./components/${component}.js`);
+    toggleMenuState(action);
   });
 });

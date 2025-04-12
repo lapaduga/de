@@ -1,4 +1,4 @@
-export function handleMenuClick(action) {
+export function toggleMenuState(action) {
 	const menu = document.getElementById('menu');
 
 	if (!menu) return

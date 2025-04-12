@@ -2,21 +2,21 @@ header.header
 	.header__container
 		.header__body
 			span.logo
-				img(src="/logo.svg" alt="Company Logo" title="Another text" decoding="async").logo__icon
-			button(type="button" onclick="menu.showModal()").burger.outline
+				img(src="./logo.svg" alt="Company Logo" title="Another text" decoding="async").logo__icon
+			button(type="button" data-component="menu" data-action="showModal").burger.outline
 				span.burger__decor
 	dialog.menu#menu
-		button(type="button" onclick="menu.close()").menu-button-close.outline
+		button(type="button" data-component="menu" data-action="close").menu-button-close.outline
 			span.menu-button-close__decor
 		nav.menu__wrap
 			ul.menu__list
 				li.menu__item
-					a.menu__link.outline.font-semibold(href="#hero" data-action="close") About
+					a.menu__link.outline.font-semibold(href="#hero" data-component="menu" data-action="close") About
 				li.menu__item
-					a.menu__link.outline.font-semibold(href="#services") Services We Provide
+					a.menu__link.outline.font-semibold(href="#services" data-component="menu" data-action="close") Services We Provide
 				li.menu__item
-					a.menu__link.outline.font-semibold(href="#projects") Our Projects
+					a.menu__link.outline.font-semibold(href="#projects" data-component="menu" data-action="close") Our Projects
 				li.menu__item
-					a.menu__link.outline.font-semibold(href="#contact") Let's Talk
+					a.menu__link.outline.font-semibold(href="#contact" data-component="menu" data-action="close") Let's Talk
 				li.menu__item
-					a.menu__link.outline.font-semibold(href="#footer") Contacts
+					a.menu__link.outline.font-semibold(href="#footer" data-component="menu" data-action="close") Contacts
