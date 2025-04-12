@@ -1,0 +1,19 @@
+.logo {
+	display: flex;
+	align-items: center;
+
+	&__icon {
+		width: 3rem;
+		height: 3rem;
+		flex: 0 0 3rem;
+		display: grid;
+		place-content: center;
+	}
+
+	&__text {
+		color: var(--white);
+		letter-spacing: 0.02em;
+		font-weight: 600;
+		font-size: 1.75rem;
+	}
+}

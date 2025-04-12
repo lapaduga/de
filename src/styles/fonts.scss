@@ -1,34 +1,38 @@
 @font-face {
-    font-family: 'Galien';
-    src: url('Galien-Bold.woff2') format('woff2'),
-        url('Galien-Bold.woff') format('woff');
-    font-weight: bold;
+    font-family: Galien;
+    src: url('/fonts/Galien-Bold.woff2') format('woff2'),
+        url('/fonts/Galien-Bold.woff') format('woff'),
+        url('/fonts/Galien-Bold.ttf') format('ttf');
+    font-weight: 700;
     font-style: italic;
     font-display: swap;
 }
 
 @font-face {
-    font-family: 'Gilroy';
-    src: url('Gilroy-Regular.woff2') format('woff2'),
-        url('Gilroy-Regular.woff') format('woff');
-    font-weight: normal;
+    font-family: Gilroy;
+    src: url('/fonts/Gilroy-Regular.woff2') format('woff2'),
+        url('/fonts/Gilroy-Regular.woff') format('woff'),
+        url('/fonts/Gilroy-Regular.ttf') format('ttf');
+    font-weight: 400;
     font-style: normal;
     font-display: swap;
 }
 
 @font-face {
-    font-family: 'Gilroy';
-    src: url('Gilroy-Light.woff2') format('woff2'),
-        url('Gilroy-Light.woff') format('woff');
+    font-family: Gilroy;
+    src: url('/fonts/Gilroy-Light.woff2') format('woff2'),
+        url('/fonts/Gilroy-Light.woff') format('woff'),
+        url('/fonts/Gilroy-Light.ttf') format('ttf');
     font-weight: 300;
     font-style: normal;
     font-display: swap;
 }
 
 @font-face {
-    font-family: 'Gilroy';
-    src: url('Gilroy-SemiBold.woff2') format('woff2'),
-        url('Gilroy-SemiBold.woff') format('woff');
+    font-family: Gilroy;
+    src: url('/fonts/Gilroy-SemiBold.woff2') format('woff2'),
+        url('/fonts/Gilroy-SemiBold.woff') format('woff'),
+        url('/fonts/Gilroy-SemiBold.ttf') format('ttf');
     font-weight: 600;
     font-style: normal;
     font-display: swap;

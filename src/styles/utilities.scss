@@ -1,0 +1,38 @@
+.container {
+	max-width: 60.75rem;
+	padding-inline: 1rem;
+	margin-inline: auto;
+}
+
+.round {
+	border-radius: .625rem;
+}
+
+.font-light {
+	font-weight: 300;
+}
+
+.font-semibold {
+	font-weight: 600;
+}
+
+.font-bold {
+	font-weight: 700;
+}
+
+.text-white {
+	color: var(--white)
+}
+
+.text-primary-op-40 {
+	color: color-mix(in oklab, var(--primary), transparent 40%);
+}
+
+.text-primary-op-60 {
+	color: color-mix(in oklab, var(--primary), transparent 60%);
+}
+
+.outline:focus-visible {
+	border-radius: 0.25rem;
+	outline: 3px solid color-mix(in oklab, var(--accent), transparent 30%);
+}
