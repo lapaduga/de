@@ -1,0 +1,23 @@
+.btn {
+	--shadow-transparency: 80%;
+
+	color: var(--white);
+	padding: 0.875rem 3rem;
+	background-color: var(--accent);
+	border: 1px solid var(--accent);
+	letter-spacing: 0.04em;
+	box-shadow: 5px 10px 20px 0 color-mix(in oklab, var(--primary-light), transparent var(--shadow-transparency));
+	transition:
+		background-color 0.3s ease,
+		color 0.3s ease,
+		box-shadow 0.3s ease;
+
+	@media (any-hover: hover) {
+		&:hover {
+			--shadow-transparency: 70%;
+
+			background-color: var(--white);
+			color: var(--accent);
+		}
+	}
+}

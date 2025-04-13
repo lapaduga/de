@@ -30,9 +30,21 @@
 
 .text-primary-op-60 {
 	color: color-mix(in oklab, var(--primary), transparent 60%);
+
+	@media (width <= 1024px) {
+		color: var(--primary);
+	}
 }
 
 .outline:focus-visible {
 	border-radius: 0.25rem;
 	outline: 3px solid color-mix(in oklab, var(--accent), transparent 30%);
+}
+
+.max-width-424 {
+	max-width: 26.5rem;
+}
+
+.w-100 {
+	width: 100%;
 }

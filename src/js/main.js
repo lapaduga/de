@@ -1,15 +1,22 @@
 import '/src/styles/style.scss';
 
-document.addEventListener('DOMContentLoaded', () => {
+const init = async () => {
+  const hero = document.getElementById('hero');
+
+  if (hero) {
+    const { applyParallaxStyle } = await import(`./components/hero.js`);
+    applyParallaxStyle();
+
+    hero.addEventListener('mouseover', async event => {
+      const { handleMouseOverEvent } = await import(`./handlers/mouseover-handler.js`);
+      handleMouseOverEvent(event, hero);
+    });
+  }
+
   document.addEventListener('click', async event => {
-    const item = event.target.closest('[data-action]');
-
-    if (!item) return;
-
-    let action = item.dataset.action;
-    let component = item.dataset.component;
-
-    const { toggleMenuState } = await import(`./components/${component}.js`);
-    toggleMenuState(action);
+    const { handleClick } = await import(`./handlers/click-handler.js`);
+    handleClick(event);
   });
-});
+}
+
+document.addEventListener('DOMContentLoaded', init);
