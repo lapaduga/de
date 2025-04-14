@@ -24,16 +24,18 @@
 	color: var(--white);
 }
 
-.text-primary-op-40 {
-	color: color-mix(in oklab, var(--primary), transparent 40%);
+.text-primary {
+	color: var(--primary);
 }
 
-.text-primary-op-60 {
-	color: color-mix(in oklab, var(--primary), transparent 60%);
+.text-opacity-60 {
+	--transparency-rate: 60%;
 
-	&.text-primary-op-60--disable-mobile-op {
+	color: color-mix(in oklab, currentcolor, transparent var(--transparency-rate));
+
+	&.text-opacity-60--disable-mobile-op {
 		@media (width <= 1024px) {
-			color: var(--primary);
+			--transparency-rate: 0;
 		}
 	}
 }
@@ -43,10 +45,24 @@
 	outline: 3px solid color-mix(in oklab, var(--accent), transparent 30%);
 }
 
+.max-width-540 {
+	max-width: 33.75rem;
+}
+
 .max-width-424 {
 	max-width: 26.5rem;
 }
 
 .w-100 {
 	width: 100%;
+}
+
+.bg-accent {
+	background-color: var(--accent);
+}
+
+.truncate {
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
 }

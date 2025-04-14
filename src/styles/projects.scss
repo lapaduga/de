@@ -1,0 +1,67 @@
+.projects {
+	border-radius: 200px 0 0;
+	padding-block: clamp(4rem, 10vw, 6rem) clamp(4rem, 10vw, 7.75rem);
+
+	@media (width <= 1200px) {
+		border-radius: 40px 0 0;
+	}
+
+	&__top {
+		display: flex;
+		gap: 6rem;
+
+		@media (width < 768px) {
+			gap: 1rem;
+			flex-direction: column;
+			align-items: end;
+			text-align: right;
+		}
+	}
+
+	&__title {
+		@media (width > 767px) {
+			max-width: 14.375rem;
+		}
+	}
+
+	&__list {
+		list-style: none;
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		gap: 0.0625rem;
+		background-color: var(--white);
+
+		@media (width <= 768px) {
+			grid-template-columns: repeat(2, 1fr);
+		}
+	}
+
+	&__item {
+		aspect-ratio: 234 / 125;
+		background-color: var(--accent);
+		transition: background-color var(--transition);
+
+		@media (any-hover: hover) {
+			&:hover {
+				background-color: var(--primary);
+			}
+		}
+	}
+
+	&__link {
+		display: grid;
+		place-content: center;
+		width: 100%;
+		height: 100%;
+
+		&.projects__link--see-more {
+			background-color: color-mix(in oklab, var(--primary), transparent 80%);
+		}
+
+		@media (any-hover: hover) {
+			&:hover {
+				color: var(--white);
+			}
+		}
+	}
+}
