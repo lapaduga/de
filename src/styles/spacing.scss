@@ -3,7 +3,11 @@
 }
 
 .mt-32 {
-	margin-top: clamp(1.5rem, 3vw, 2rem);
+	margin-top: clamp(1rem, 3vw, 2rem);
+}
+
+.mt-64 {
+	margin-top: clamp(2.5rem, 5vw, 4rem);
 }
 
 .mt-70 {

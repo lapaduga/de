@@ -1,6 +1,7 @@
 .logo {
 	display: flex;
 	align-items: center;
+	gap: clamp(0.75rem, 2vw, 1rem);
 
 	&__icon {
 		width: 3rem;

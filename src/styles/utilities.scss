@@ -28,8 +28,12 @@
 	color: var(--primary);
 }
 
+.text-opacity-40 {
+	color: color-mix(in oklab, currentcolor, transparent 60%);
+}
+
 .text-opacity-60 {
-	--transparency-rate: 60%;
+	--transparency-rate: 40%;
 
 	color: color-mix(in oklab, currentcolor, transparent var(--transparency-rate));
 
@@ -49,6 +53,10 @@
 	max-width: 33.75rem;
 }
 
+.max-width-460 {
+	max-width: 28.75rem;
+}
+
 .max-width-424 {
 	max-width: 26.5rem;
 }
@@ -59,6 +67,10 @@
 
 .bg-accent {
 	background-color: var(--accent);
+}
+
+.bg-primary-lighter {
+	background-color: var(--primary-lighter);
 }
 
 .truncate {

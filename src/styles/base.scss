@@ -57,6 +57,11 @@ button {
 	border: 0;
 }
 
+ul,
+ol {
+	list-style: none;
+}
+
 a {
 	color: var(--accent);
 	text-decoration: none;

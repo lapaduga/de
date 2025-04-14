@@ -1,0 +1,7 @@
+.foot {
+	--gutter: 0;
+
+	@media (width > 600px) {
+		--gutter: clamp(2.5rem, 7vw, 6rem);
+	}
+}

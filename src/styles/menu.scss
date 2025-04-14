@@ -42,10 +42,6 @@
 		background-color: color-mix(in oklab, var(--black), transparent);
 	}
 
-	&__list {
-		list-style: none;
-	}
-
 	&__link {
 		font-size: 1.5rem;
 		transition: color var(--transition);
