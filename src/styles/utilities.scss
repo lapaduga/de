@@ -5,7 +5,7 @@
 }
 
 .round {
-	border-radius: .625rem;
+	border-radius: 0.625rem;
 }
 
 .font-light {
@@ -21,7 +21,7 @@
 }
 
 .text-white {
-	color: var(--white)
+	color: var(--white);
 }
 
 .text-primary-op-40 {
@@ -31,8 +31,10 @@
 .text-primary-op-60 {
 	color: color-mix(in oklab, var(--primary), transparent 60%);
 
-	@media (width <= 1024px) {
-		color: var(--primary);
+	&.text-primary-op-60--disable-mobile-op {
+		@media (width <= 1024px) {
+			color: var(--primary);
+		}
 	}
 }
 

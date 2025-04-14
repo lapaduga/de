@@ -1,0 +1,68 @@
+.card {
+	break-inside: avoid;
+	box-shadow: 5px 20px 50px 0 color-mix(in oklab, var(--card-shadow), transparent 80%);
+	
+	&__info {
+		padding: clamp(1.5rem, 4vw, 3rem);
+	}
+	
+	&__image-wrap {
+		position: relative;
+		aspect-ratio: 380 / 236;
+	}
+
+	&__img {
+		position: absolute;
+
+		&--first {
+			left: 50%;
+			top: 50%;
+			translate: -65% -53%;
+			width: 50.5%;
+		}
+
+		&--second {
+			left: 51.5%;
+			translate: -50% -10%;
+			width: 67%;
+		}
+
+		&--third {
+			left: 50%;
+			top: 50%;
+			translate: -61% -51%;
+			width: 45%;
+		}
+	}
+
+	&:has(.card__img) {
+		.card__info {
+			padding-top: 0;
+		}
+	}
+}
+
+.card-link {
+	display: inline-flex;
+	align-items: center;
+	font-size: 0.875rem;
+	line-height: 2.14;
+	gap: 1.5rem;
+	
+	&__arrow {
+		width: 1.5rem;
+		height: 1.5rem;
+		flex: 0 0 1.5rem;
+		mask: url("/icons/arrow.svg") center no-repeat;
+		background-color: var(--accent);
+		transition: background-color var(--transition);
+	}
+
+	@media (any-hover: hover) {
+		&:hover {
+			.card-link__arrow {
+				background-color: var(--primary);
+			}
+		}
+	}
+}

@@ -5,3 +5,17 @@
 	line-height: 1.16;
 	letter-spacing: 0.04em;
 }
+
+.h2 {
+	font-weight: 600;
+	font-size: clamp(1.75rem, 3vw, 2.25rem);
+	line-height: 1.28;
+	letter-spacing: 0.05em;
+}
+
+.h3 {
+	font-weight: 600;
+	font-size: clamp(1.125rem, 2vw, 1.25rem);
+	line-height: 1.5;
+	letter-spacing: 0.0487em;
+}
