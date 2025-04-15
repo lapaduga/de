@@ -73,6 +73,7 @@ const sendForm = async event => {
 			setTimeout(() => successPopup.close(), 5000);
 			form.reset();
 			form.classList.remove('_sending');
+			document.getElementById('modal').close();
 			submitBtn.disabled = false;
 			formList.disabled = false;
 		} else {
