@@ -10,46 +10,25 @@ export const toggleMenuState = action => {
 	modal[action]();
 }
 
-const form = document.querySelector('.form');
+const form = document.getElementById('form');
 
-form.addEventListener('submit', sendForm);
-
-async function sendForm(e) {
-	e.preventDefault();
-
-	let error = validateForm();
-
-	let formData = new FormData(form);
-
-	if (error === 0) {
-		form.querySelector('.form__alert').classList.remove('_error');
-		form.classList.add('_sending');
-		let response = await fetch('sendmail.php', {
-			method: 'POST',
-			body: formData
-		});
-		if (response.ok) {
-			let result = await response.json();
-			document.querySelector('#popup-thx').classList.add('_open')
-			setTimeout(() => document.querySelector('#popup-thx').classList.remove('_open'), 3000);
-			form.reset();
-			form.classList.remove('_sending');
-		} else {
-			document.querySelector('#popup-error').classList.add('_open')
-			setTimeout(() => document.querySelector('#popup-error').classList.remove('_open'), 3000);
-			form.classList.remove('_sending');
-		}
-	} else {
-		form.querySelector('.form__alert').classList.add('_error');
-	}
+const formAddError = input => {
+	input.classList.add('_error');
 }
 
-function validateForm() {
-	let error = 0;
-	let formReq = document.querySelectorAll('._req');
+const formRemoveError = input => {
+	input.classList.remove('_error');
+}
 
-	for (let i = 0; i < formReq.length; i++) {
-		const input = formReq[i];
+const emailTest = input => {
+	return !/^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,8})+$/.test(input.value);
+}
+
+const validateForm = () => {
+	let error = 0;
+	let requiredFields = form.querySelectorAll('[data-required]');
+
+	requiredFields.forEach(input => {
 		formRemoveError(input);
 
 		if (input.classList.contains('_email')) {
@@ -63,19 +42,50 @@ function validateForm() {
 				error++;
 			}
 		}
-	}
+	});
 
 	return error;
 }
 
-function formAddError(input) {
-	input.classList.add('_error');
+const sendForm = async event => {
+	event.preventDefault();
+
+	let error = validateForm();
+	let formData = new FormData(form);
+	const alertElement = document.getElementById('alert');
+	const submitBtn = document.getElementById('submit');
+	const formList = document.getElementById('form-list');
+
+	if (error === 0) {
+		alertElement.classList.remove('_error');
+		form.classList.add('_sending');
+		submitBtn.disabled = true;
+		formList.disabled = true;
+
+		let response = await fetch('sendmail.php', {
+			method: 'POST',
+			body: formData
+		});
+
+		if (response.ok) {
+			const successPopup = document.getElementById('popup-thx');
+			successPopup.showModal();
+			setTimeout(() => successPopup.close(), 5000);
+			form.reset();
+			form.classList.remove('_sending');
+			submitBtn.disabled = false;
+			formList.disabled = false;
+		} else {
+			const failPopup = document.getElementById('popup-error');
+			failPopup.showModal();
+			setTimeout(() => failPopup.close(), 5000);
+			form.classList.remove('_sending');
+			submitBtn.disabled = false;
+			formList.disabled = false;
+		}
+	} else {
+		alertElement.classList.add('_error');
+	}
 }
 
-function formRemoveError(input) {
-	input.classList.remove('_error');
-}
-
-function emailTest(input) {
-	return !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,8})+$/.test(input.value);
-}
+form.addEventListener('submit', sendForm);
