@@ -57,6 +57,11 @@
 			background-color: color-mix(in oklab, var(--primary), transparent 80%);
 		}
 
+		&:focus-visible {
+			outline: none;
+			background-color: var(--primary-light);
+		}
+
 		@media (any-hover: hover) {
 			&:hover {
 				color: var(--white);

@@ -46,7 +46,7 @@
 
 .outline:focus-visible {
 	border-radius: 0.25rem;
-	outline: 3px solid color-mix(in oklab, var(--accent), transparent 30%);
+	outline: 3px solid color-mix(in oklab, var(--primary), transparent 30%);
 }
 
 .max-width-540 {
