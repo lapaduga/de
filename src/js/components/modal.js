@@ -37,7 +37,7 @@ const validateForm = () => {
 				error++;
 			}
 		} else {
-			if (input.value === '') {
+			if (input.value.trim() === '') {
 				formAddError(input);
 				error++;
 			}
