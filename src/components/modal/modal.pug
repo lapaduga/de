@@ -1,0 +1,19 @@
+dialog.modal#modal.round.p-56.w-100.text-primary
+	h3.modal__title.h3 SEND US MESSAGE
+	form.form.mt-48
+		.form__list
+			label.form__label.gap-8
+				span.form__caption Full Name
+				input(type="text" name="username" placeholder="Your Name").form__control._req.outline.round.w-100
+			label.form__label.gap-8
+				span.form__caption Email
+				input(type="email" name="email" placeholder="Your Email").form__control._req._email.outline.round.w-100
+			label.form__label.gap-8
+				span.form__caption Message
+				textarea(name="message" placeholder="Your Message").form__control.outline.round.w-100
+		.form__alert Please, fill in all required fields!
+		button(type="submit").btn.btn-lg.round.outline.mt-70.w-100.font-semibold SUBMIT
+	button(type="button" data-component="modal" data-action="close").modal__close-button.close-button.outline
+			span.close-button__decor
+	.spinner
+		.loader

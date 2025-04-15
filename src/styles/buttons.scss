@@ -13,6 +13,10 @@
 		color var(--transition),
 		box-shadow var(--transition);
 
+	&.btn-lg {
+		padding: 1.375rem 3rem;
+	}
+
 	@media (any-hover: hover) {
 		&:hover {
 			--shadow-transparency: 70%;

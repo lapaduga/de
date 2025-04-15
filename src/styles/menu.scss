@@ -54,7 +54,7 @@
 	}
 }
 
-.menu-button-close {
+.close-button {
 	width: 2rem;
 	height: 2rem;
 	float: right;
@@ -64,7 +64,7 @@
 
 	@media (any-hover: hover) {
 		&:hover {
-			.menu-button-close__decor {
+			.close-button__decor {
 				background-color: var(--primary);
 			}
 		}

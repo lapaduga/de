@@ -1,9 +1,17 @@
+.mt-8 {
+	margin-top: 0.5rem;
+}
+
 .mt-16 {
 	margin-top: 1rem;
 }
 
 .mt-32 {
 	margin-top: clamp(1rem, 3vw, 2rem);
+}
+
+.mt-48 {
+	margin-top: clamp(1.5rem, 4vw, 3rem);
 }
 
 .mt-64 {
@@ -20,4 +28,12 @@
 
 .p-8 {
 	padding: 0.5rem;
+}
+
+.p-56 {
+	padding: clamp(1.5rem, 6vw, 3.5rem);
+}
+
+.gap-8 {
+	gap: 0.5rem;
 }
